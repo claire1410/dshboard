@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>User Dashboard</title>
+  <title>Dashboard</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,118 +13,93 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f2f5;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      height: 100vh;
+      background-color: #f7f8fa;
     }
 
-    header {
-      background-color: #4a90e2;
+    .sidebar {
+      width: 220px;
+      background-color: #1e1e2f;
       color: white;
+      display: flex;
+      flex-direction: column;
       padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
       text-align: center;
     }
 
-    main {
-      flex: 1;
-      padding: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      display: block;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background 0.2s;
     }
 
-    .welcome {
+    .nav a:hover {
+      background-color: #33334d;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .main h1 {
+      color: #333;
       margin-bottom: 20px;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
+    .box {
       background-color: white;
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .card p {
-      color: #666;
-    }
-
-    footer {
-      background-color: #ddd;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
     .logout-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 25px;
+      margin-top: auto;
+      padding: 12px;
       background-color: #ff4d4d;
       color: white;
+      border: none;
       border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
     }
 
     .logout-btn:hover {
-      background-color: #d90000;
+      background-color: #d93636;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>My Dashboard</h1>
-  </header>
-
-  <main>
-    <div class="welcome">
-      <h2>Welcome, Claire!</h2>
-      <p>Here’s your dashboard overview.</p>
+  <div class="sidebar">
+    <h2>MyPanel</h2>
+    <div class="nav">
+      <a href="#">🏠 Home</a>
+      <a href="#">👤 Profile</a>
+      <a href="#">⚙️ Settings</a>
+      <a href="#">📊 Reports</a>
     </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>Profile</h3>
-        <p>View and edit your personal information.</p>
-      </div>
-      <div class="card">
-        <h3>Messages</h3>
-        <p>Check your inbox and recent notifications.</p>
-      </div>
-      <div class="card">
-        <h3>Settings</h3>
-        <p>Manage account preferences and security.</p>
-      </div>
-      <div class="card">
-        <h3>Help Center</h3>
-        <p>Find FAQs and support resources.</p>
-      </div>
-    </div>
-
     <a class="logout-btn" href="logout.php">Logout</a>
-  </main>
+  </div>
 
-  <footer>
-    &copy; 2025 YourAppName. All rights reserved.
-  </footer>
+  <div class="main">
+    <h1>Welcome to your dashboard, Claire!</h1>
+    <div class="box">
+      <p>This is your main area. You can customize it to display any content you want — such as recent activity, charts, or messages.</p>
+      <p>Start building your dashboard app by linking the sidebar buttons to different PHP pages or sections.</p>
+    </div>
+  </div>
 
 </body>
 </html>
